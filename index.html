@@ -1,10 +1,337 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Project</title>
+    <title>Digi Bloom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        :root {
+            --baby-pink: #FFD6E7;
+            --soft-pink: #FFB6C1;
+            --white: #FFFFFF;
+            --purple: #B19CD9;
+            --light-purple: #E6E6FA;
+            --dark-purple: #9370DB;
+            --text-color: #4A4A4A;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(177, 156, 217, 0.1) 0%, transparent 20%);
+        }
+        
+        .login-container {
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            color: var(--dark-purple);
+            font-size: 42px; 
+            font-weight: 800; /* Made bolder */
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo::before {
+            content: '🌸';
+            font-size: 48px; /* Increased */
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .tagline {
+            color: var(--purple);
+            margin-bottom: 40px; /* Increased spacing */
+            font-size: 18px; /* Slightly larger */
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600; /* Made bolder */
+            color: var(--purple);
+            font-size: 16px; /* Slightly larger */
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--baby-pink);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 4px rgba(177, 156, 217, 0.15);
+            background-color: var(--white);
+        }
+        
+        .input-group input::placeholder {
+            color: #C7C7CC;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 17px;
+            background: linear-gradient(135deg, var(--soft-pink), var(--purple));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px; /* Slightly larger */
+            font-weight: 700; /* Bolder */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(177, 156, 217, 0.25);
+            background: linear-gradient(135deg, var(--purple), var(--soft-pink));
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        .divider {
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            color: var(--purple);
+            font-size: 16px; /* Slightly larger */
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--baby-pink), transparent);
+        }
+        
+        .divider span {
+            padding: 0 20px;
+        }
+        
+        .signup-link {
+            color: var(--dark-purple);
+            text-decoration: none;
+            font-weight: 700; /* Bolder */
+            padding: 12px 24px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--baby-pink);
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .signup-link:hover {
+            background-color: var(--baby-pink);
+            border-color: var(--purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(177, 156, 217, 0.2);
+        }
+        
+        .forgot-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--purple);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .forgot-link:hover {
+            color: var(--dark-purple);
+            text-decoration: underline;
+        }
+        
+        .wellness-tip {
+            margin-top: 40px; /* More spacing */
+            padding: 20px;
+            background: linear-gradient(135deg, var(--baby-pink), var(--light-purple));
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--purple);
+            border-left: 4px solid var(--purple);
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+        
+        .wellness-tip strong {
+            color: var(--dark-purple);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px; /* Slightly larger */
+            font-weight: 600;
+        }
+        
+        /* Removed .blob styles */
+        
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 36px;
+            }
+            
+            .logo::before {
+                font-size: 40px;
+            }
+            
+            .tagline {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="login-container">
+        <!-- Removed blob elements -->
+        
+        <div class="logo">Welcome to Digi Bloom</div>
+        <p class="tagline">Mindful technology for a balanced life</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Sign In</button>
+            
+            <a href="#" class="forgot-link">Forgot your password?</a>
+            
+            <div class="divider">
+                <span>Don't have an account?</span>
+            </div>
+            
+            <a href="#" class="signup-link">Create your account</a>
+            
+            <div class="wellness-tip">
+                <strong>Wellness Tip:</strong> Take a deep breath before logging in. Set an intention.
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // For demo purposes - in a real app, you'd send this to your server
+            const loginBtn = document.querySelector('.login-btn');
+            const originalText = loginBtn.textContent;
+            
+            // Show loading state
+            loginBtn.textContent = 'Signing in...';
+            loginBtn.style.opacity = '0.8';
+            loginBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('Login successful! Welcome to Digi Bloom.');
+                
+                // Reset button
+                loginBtn.textContent = originalText;
+                loginBtn.style.opacity = '1';
+                loginBtn.disabled = false;
+                
+                // Clear form
+                document.getElementById('loginForm').reset();
+                
+                // In a real app, you would redirect to dashboard:
+                // window.location.href = '/dashboard';
+            }, 1500);
+        });
+        
+        // Add some interactive feedback
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
