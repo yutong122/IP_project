@@ -17,7 +17,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, var(--lighter-purple) 0%, #E6E0FF 100%);
+            background: linear-gradient(135deg, var(--baby-pink) 0%, #FFE6F2 50%, #FFD6E7 100%);
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
@@ -334,7 +334,7 @@
         }
         
         .password-requirements {
-            background: rgba(177, 156, 217, 0.08);
+            background: rgba(223, 115, 178, 0.123);
             border-radius: 10px;
             padding: 15px;
             margin-top: 10px;
@@ -350,38 +350,4 @@
         
         .password-requirements li {
             margin-bottom: 4px;
-        }
-        
-        @media (max-width: 480px) {
-            .name-group {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .signup-container {
-                margin: 20px;
-                padding: 30px 25px;
-            }
-        }
-
-        
-        
-        @media (max-width: 480px) {
-            .login-container {
-                margin: 20px;
-                padding: 20px;
-            }
-            
-            .logo {
-                font-size: 36px;
-            }
-            
-            .logo::before {
-                font-size: 40px;
-            }
-            
-            .tagline {
-                font-size: 16px;
-                margin-bottom: 30px;
-            }
         }
