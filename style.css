@@ -234,6 +234,136 @@
             font-size: 16px; 
             font-weight: 600;
         }
+
+        /*SIGNUP*/
+
+        .signup-container {
+            max-width: 500px; 
+        }
+        
+        .name-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .name-group .input-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .terms {
+            margin: 25px 0;
+            text-align: left;
+        }
+        
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .terms-checkbox input[type="checkbox"] {
+            margin-top: 3px;
+            accent-color: var(--purple);
+            width: 18px;
+            height: 18px;
+        }
+        
+        .terms-checkbox label {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        .terms-text {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+        
+        .terms-text a {
+            color: var(--purple);
+            text-decoration: none;
+        }
+        
+        .terms-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .signup-btn {
+            width: 100%;
+            padding: 17px;
+            background: linear-gradient(135deg, var(--soft-pink), var(--purple));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(177, 156, 217, 0.25);
+            background: linear-gradient(135deg, var(--purple), var(--soft-pink));
+        }
+        
+        .login-prompt {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 15px;
+            color: var(--text-color);
+        }
+        
+        .login-prompt a {
+            color: var(--purple);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        .password-requirements {
+            background: rgba(177, 156, 217, 0.08);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--text-color);
+            text-align: left;
+        }
+        
+        .password-requirements ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+        
+        .password-requirements li {
+            margin-bottom: 4px;
+        }
+        
+        @media (max-width: 480px) {
+            .name-group {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .signup-container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+        }
+
         
         
         @media (max-width: 480px) {
