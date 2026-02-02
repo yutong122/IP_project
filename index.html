@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digi Bloom</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="character-container">
+        <!-- Petals -->
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+
+        <!-- Main Character -->
+        <div class="character"></div>
+    </div>
+    
+    <div class="loading-text">
+        Loading<span class="loading-dots"></span>
+    </div>
+    
+    <div class="loading-message" id="loadingMessage">
+        Loading
+    </div>
+</div>
+
 <body>
     <div class="login-container">
         
@@ -37,53 +61,5 @@
             </div>
         </form>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // Simple validation
-            if (!email || !password) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            const loginBtn = document.querySelector('.login-btn');
-            const originalText = loginBtn.textContent;
-            
-            // Show loading state
-            loginBtn.textContent = 'Signing in...';
-            loginBtn.style.opacity = '0.8';
-            loginBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                alert('Login successful! Welcome to Digi Bloom.');
-                
-                // Reset button
-                loginBtn.textContent = originalText;
-                loginBtn.style.opacity = '1';
-                loginBtn.disabled = false;
-                
-                // Clear form
-                document.getElementById('loginForm').reset();
-
-            }, 1500);
-        });
-        
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-    </script>
 </body>
 </html>
