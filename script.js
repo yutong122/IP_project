@@ -3,7 +3,6 @@ function showLoadingScreen() {
     const loadingScreen = document.getElementById('loadingScreen');
     const messages = [
         "Preparing your mindful space...",
-        "Loading...",
         "Setting up your mindful journey...",
         "Almost ready to bloom..."
     ];
