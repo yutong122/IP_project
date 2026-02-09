@@ -556,4 +556,138 @@ body::after {
 .snap-container {
     -ms-overflow-style: none;
     scrollbar-width: none;
+<<<<<<< HEAD
 }
+=======
+}
+
+/*start quiz page*/
+.quiz-frame {
+    display: flex;
+    width: 480px;
+    height: 300px;
+    background-color: #E7DDFC;
+    border-radius: 10px;
+    margin: 20px auto;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    text-align: center;
+    padding-top: 20px; 
+}
+.quiz-instructions {
+    width: 90%;
+    font-size: 22px;
+    color: black;
+    font-family: 'Roboto';
+    margin: 20px 0; 
+}
+.dog-img {
+    width: 300px; 
+    height: auto;
+    display: block;
+    margin: 10px auto; 
+    border-radius: 10px;
+    object-fit: cover;
+}
+.quiz-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px; 
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 2px solid #e7ddfc;
+}
+body.quiz-page {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.quiz-title {
+    color: var(--text-color);
+    font-family: 'Fuzzy Bubbles';
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.start-button {
+    background-color: var(--dark-purple);
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(106, 103, 255, 0.3);
+    margin-top: 30px; 
+}
+.start-button:hover {
+    background-color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(106, 103, 255, 0.4);
+}
+
+.start-button:active {
+    transform: translateY(-1px);
+}
+.decoration {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.3;
+}
+
+.decoration:nth-child(1) {
+    top: 30px;
+    left: 30px;
+}
+
+.decoration:nth-child(2) {
+    top: 30px;
+    right: 30px;
+}
+
+.decoration:nth-child(3) {
+    bottom: 30px;
+    left: 30px;
+}
+
+.decoration:nth-child(4) {
+    bottom: 30px;
+    right: 30px;
+}
+
+/* navigation bar*/
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* centers nav items horizontally */
+    gap: 30px;
+    /* space between nav items */
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 50px;
+    background-color: white;
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    /* removes underline from links */
+    color: black;
+}
+
+>>>>>>> 8c376fa01513e3b4b0b4267ea38e48352f32d7f0
