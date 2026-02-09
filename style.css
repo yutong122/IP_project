@@ -595,3 +595,25 @@ body::after {
     left: 500px;
     bottom: 300px;
 }
+
+/* navigation bar*/
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* centers nav items horizontally */
+    gap: 30px;
+    /* space between nav items */
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 50px;
+    background-color: white;
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    /* removes underline from links */
+    color: black;
+}
+
