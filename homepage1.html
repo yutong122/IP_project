@@ -2,77 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="normalise.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <title>Homepage 1</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="normalise.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
-    <!-- Logo -->
-    <div class="logo-container-img">
-        <img src="circle-logo.jpg" alt="App Logo" width="200px">
+  <div class="homepage1">
+
+    <!-- BACKGROUND -->
+    <div class="homepage1-bg">
+        <video autoplay muted loop class="homepage1-bg-video">
+            <source src="lightning.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- Character Containers -->
-    <div class="character-containers">
-        <!-- GIRL MODEL -->
-        <div class="character-box girl-box">
-            <img src="girl view.png" alt="girl-model view">
-            <div class="character-name">Bloom</div>
-        </div>
-        
-        <!-- ROBOT MODEL -->
-        <div class="character-box robot-box">
-            <img src="robot.png" alt="robot-model view">
-            <div class="character-name">Digimon</div>
-        </div>
+    <!-- LOGO -->
+    <div class="homepage1-top">
+      <img src="circle-logo.png" alt="Logo" class="homepage1-logo" />
     </div>
 
-    <!-- Nav bar -->
-    <nav class="navbar">
-        <!-- Quiz icon -->
-        <a href="start_quiz.html" class="nav-item">
-            <img src="quiz icon.png" alt="Quiz Icon">
-        </a>
-        
-        <!-- Stories icon -->
-        <a href="girlstory.html" class="nav-item">
-            <img src="stories icon.png" alt="Stories Icon">
-        </a>
-        
-        <!-- Home icon -->
-        <a href="homepage1.html" class="nav-item">
-            <img src="home icon.png" alt="Home Icon">
-        </a>
-        
-        <!-- Rewards icon -->
-        <a href="rewards.html" class="nav-item">
-            <img src="rewards icon.png" alt="Rewards Icon">
-        </a>
-        
-        <!-- Profile icon -->
-        <a href="profile.html" class="nav-item">
-            <img src="profile icon.png" alt="Profile Icon">
-        </a>
+    <!-- CHARACTERS -->
+    <div class="homepage1-characters">
+      <div class="homepage1-character">
+        <div class="homepage1-character-img">
+            <img src="girl view.png" alt="Girl">
+        </div>
+        <div class="homepage1-bar girl"></div>
+        <div class="homepage1-bar-text">30%</div>
+      </div>
+
+      <div class="homepage1-character">
+        <div class="homepage1-character-img placeholder">
+            <img src="images/robot-placeholder.png" alt="Monster">
+        </div>
+        <div class="homepage1-bar monster"></div>
+        <div class="homepage1-bar-text">70%</div>
+      </div>
+    </div>
+
+
+
+    <!-- BOTTOM NAV (5 icons) -->
+    <nav class="homepage1-nav">
+      <img src="quiz icon.png" alt="Quiz">
+      <img src="stories icon.png" alt="Stories">
+      <img src="home icon.png" alt="Home">
+      <img src="rewards icon.png" alt="Rewards">
+      <img src="profile icon.png" alt="Profile">
     </nav>
 
-    <!-- Progress Bars -->
-    <div class="progress-container">
-        <div class="progress-item">
-            <div class="progress-label">Bloom Progress</div>
-            <div class="progress-bar" id="girl-progress">
-                <div class="progress-fill" style="width: 80%;"></div>
-            </div>
-            <div class="progress-percentage">80%</div>
-        </div>
-        
-        <div class="progress-item">
-            <div class="progress-label">Digimon Progress</div>
-            <div class="progress-bar" id="monster-progress">
-                <div class="progress-fill monster" style="width: 20%;"></div>
-            </div>
-            <div class="progress-percentage">20%</div>
-        </div>
-    </div>
+  </div>
+</body>
+</html>

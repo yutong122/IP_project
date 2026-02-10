@@ -603,7 +603,7 @@ body::after {
 }
 
 body.quiz-page {
-    background: #E7DDFC;
+    background-color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -674,63 +674,132 @@ body.quiz-page {
     right: 30px;
 }
 
-/* navigation bar*/
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 570px;
-    position: relative;
-    right: 30px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/*homepage 1*/
 
+.homepage1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.navbar a:hover img {
-    transform: scale(1.1);
+/* background */
+.homepage1-bg {
+  position: absolute;
+  inset: 0;
+  background: url("homepage1-bg.jpg") center / cover no-repeat;
+  z-index: 1;
 }
 
-.character-containers {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 30px;
+.homepage1-bg-video {
+  position: absolute;
+  inset: 0;           
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  z-index: 1;          
+  pointer-events: none; 
 }
 
-.logo-container {
-    margin-bottom: 30px;
+/* top logo */
+.homepage1-top {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  z-index: 5;
 }
 
-.logo-container img {
-    max-width: 200px;
-    height: auto;
+.homepage1-logo {
+  width: 90px;
 }
 
-.navbar a {
-    text-decoration: none;
-    /* removes underline from links */
+/* characters */
+.homepage1-characters {
+  position: absolute;
+  bottom: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 220px;
+  z-index: 4;
+}
+
+/* character wrapper */
+.homepage1-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage1-character-img {
+  width: 220px;
+  height: 260px;      
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.homepage1-character-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: none;
+  display: block;
+  margin-bottom: 0;
+  transform: scale(2.8);
+}
+
+/* progress bars */
+.homepage1-bar {
+  margin-top: 110px;
+  margin-bottom: 28px;
+  width: 180px;
+  height: 20px;
+  border-radius: 12px;
+  background: #e5e5e5;
+  overflow: hidden;
+}
+
+.homepage1-bar.girl {
+  background: linear-gradient(to right, var(--dark-pink) 30%, #ddd 30%);
+}
+
+.homepage1-bar.monster {
+  background: linear-gradient(to right, var(--dark-purple) 70%, #ddd 70%);
+}
+
+.homepage1-bar-text {
+  margin-top: -10px;        
+  font-size: 16px;
+  font-weight: bold;
+  color: white;           
+  text-align: left;
+  width:170px
+}
+
+/* bottom nav */
+.homepage1-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.homepage1-nav img {
+  width: 54px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.homepage1-nav img:hover {
+  transform: scale(1.15);
 }
 
 
-/* Progress Bars */
-.progress-container {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-}
-
-.progress-bar {
-    width: 200px;
-    height: 20px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
 
