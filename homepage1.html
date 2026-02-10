@@ -8,36 +8,71 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="normalise.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <!--logo-->
-    <div>
 
+<body>
+    <!-- Logo -->
+    <div class="logo-container-img">
+        <img src="circle-logo.jpg" alt="App Logo" width="200px">
     </div>
+
+    <!-- Character Containers -->
     <div class="character-containers">
         <!-- GIRL MODEL -->
-        <div class="girl-box">
+        <div class="character-box girl-box">
             <img src="girl view.png" alt="girl-model view">
+            <div class="character-name">Bloom</div>
         </div>
+        
         <!-- ROBOT MODEL -->
-        <div class="robot-box">
-            <img src="" alt="robot-model view">
+        <div class="character-box robot-box">
+            <img src="robot.png" alt="robot-model view">
+            <div class="character-name">Digimon</div>
         </div>
     </div>
-    <!--Nav bar-->
-    <div class="navbar">
-       <!--Quiz icon-->
-      <a href="start_quiz.html"><img src="quiz icon.jpg" alt="Quiz Icon"></a>
-       <!--stories icon-->
-      <a href="girlstory.html"><img src="stories icon.jpg" alt="Stories Icon"></a>
-       <!--home icon-->
-      <a href="homepage1.html"><img src="home icon.jpg" alt="Home Icon"></a>
-       <!--Rewards icon-->
-      <a href="rewards.html"><img src="rewards icon.jpg" alt="Rewards Icon"></a>
-       <!--Profile icon-->
-      <a href="profile.html"><img src="profile  icon.jpg" alt="Profile Icon"></a>
-    </div>
-    <div>
 
+    <!-- Nav bar -->
+    <nav class="navbar">
+        <!-- Quiz icon -->
+        <a href="start_quiz.html" class="nav-item">
+            <img src="quiz icon.png" alt="Quiz Icon">
+        </a>
+        
+        <!-- Stories icon -->
+        <a href="girlstory.html" class="nav-item">
+            <img src="stories icon.png" alt="Stories Icon">
+        </a>
+        
+        <!-- Home icon -->
+        <a href="homepage1.html" class="nav-item">
+            <img src="home icon.png" alt="Home Icon">
+        </a>
+        
+        <!-- Rewards icon -->
+        <a href="rewards.html" class="nav-item">
+            <img src="rewards icon.png" alt="Rewards Icon">
+        </a>
+        
+        <!-- Profile icon -->
+        <a href="profile.html" class="nav-item">
+            <img src="profile icon.png" alt="Profile Icon">
+        </a>
+    </nav>
+
+    <!-- Progress Bars -->
+    <div class="progress-container">
+        <div class="progress-item">
+            <div class="progress-label">Bloom Progress</div>
+            <div class="progress-bar" id="girl-progress">
+                <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+            <div class="progress-percentage">80%</div>
+        </div>
+        
+        <div class="progress-item">
+            <div class="progress-label">Digimon Progress</div>
+            <div class="progress-bar" id="monster-progress">
+                <div class="progress-fill monster" style="width: 20%;"></div>
+            </div>
+            <div class="progress-percentage">20%</div>
+        </div>
     </div>
-</body>
-</html>
