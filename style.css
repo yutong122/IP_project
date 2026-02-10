@@ -556,6 +556,9 @@ body::after {
 .snap-container {
     -ms-overflow-style: none;
     scrollbar-width: none;
+<<<<<<< HEAD
+}
+=======
 }
 
 /*start quiz page*/
@@ -734,7 +737,3 @@ body.quiz-page {
     overflow: hidden;
 }
 
-.progress-fill {
-    height: 100%;
-    background-color: #ff69b4;
-}
