@@ -603,7 +603,7 @@ body::after {
 }
 
 body.quiz-page {
-    background-color: white;
+    background: #E7DDFC;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
