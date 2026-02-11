@@ -678,129 +678,183 @@ body.quiz-page {
 /*homepage 1*/
 
 .homepage1 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* background */
 .homepage1-bg {
-  position: absolute;
-  inset: 0;
-  background: url("homepage1-bg.jpg") center / cover no-repeat;
-  z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: url("homepage1-bg.jpg") center / cover no-repeat;
+    z-index: 1;
 }
 
 .homepage1-bg-video {
-  position: absolute;
-  inset: 0;           
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   
-  z-index: 1;          
-  pointer-events: none; 
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
 }
 
 /* top logo */
-.homepage1-top {
-  position: absolute;
-  top: 24px;
-  left: 32px;
-  z-index: 5;
+.logo-container {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    z-index: 5;
 }
 
-.homepage1-logo {
-  width: 90px;
+.logo {
+    width: 90px;
 }
 
 /* characters */
 .homepage1-characters {
-  position: absolute;
-  bottom: 130px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 220px;
-  z-index: 4;
+    position: absolute;
+    bottom: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 220px;
+    z-index: 4;
 }
 
 /* character wrapper */
 .homepage1-character {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .homepage1-character-img {
-  width: 220px;
-  height: 260px;      
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    width: 220px;
+    height: 260px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .homepage1-character-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transform: none;
-  display: block;
-  margin-bottom: 0;
-  transform: scale(2.8);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: none;
+    display: block;
+    margin-bottom: 0;
+    transform: scale(2.8);
 }
 
 /* progress bars */
 .homepage1-bar {
-  margin-top: 110px;
-  margin-bottom: 28px;
-  width: 180px;
-  height: 20px;
-  border-radius: 12px;
-  background: #e5e5e5;
-  overflow: hidden;
+    margin-top: 110px;
+    margin-bottom: 28px;
+    width: 180px;
+    height: 20px;
+    border-radius: 12px;
+    background: #e5e5e5;
+    overflow: hidden;
 }
 
 .homepage1-bar.girl {
-  background: linear-gradient(to right, var(--dark-pink) 30%, #ddd 30%);
+    background: linear-gradient(to right, var(--dark-pink) 30%, #ddd 30%);
 }
 
 .homepage1-bar.monster {
-  background: linear-gradient(to right, var(--dark-purple) 70%, #ddd 70%);
+    background: linear-gradient(to right, var(--dark-purple) 70%, #ddd 70%);
 }
 
 .homepage1-bar-text {
-  margin-top: -10px;        
-  font-size: 16px;
-  font-weight: bold;
-  color: white;           
-  text-align: left;
-  width:170px
+    margin-top: -10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    width: 170px
 }
 
 /* bottom nav */
-.homepage1-nav {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
-  z-index: 10;
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
 }
 
-.homepage1-nav img {
-  width: 54px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+.nav img {
+    width: 54px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.homepage1-nav img:hover {
-  transform: scale(1.15);
+.nav img:hover {
+    transform: scale(1.15);
 }
 
 
+/*girl story page*/
+.story-container {
+    max-width: 420px;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 80px;
+}
 
+/* Header */
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.story-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+/* Bloomy's name */
+.girl-name {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: fuzzy bubbles;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+/* bloomy image box */
+.bloomy-box {
+    border: 2px solid #ff6b9e;
+    border-radius: 14px;
+    padding: 15px;
+    background: #fff;
+    display: inline-block;
+    height: 470px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bloomy-box iframe {
+    width: 90%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 18px;
+    top: 18px;
+    z-index: 1;
+}
