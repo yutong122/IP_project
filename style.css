@@ -832,7 +832,9 @@ body.quiz-page {
     font-weight: bold;
     font-family: fuzzy bubbles;
     letter-spacing: 2px;
-    margin-bottom: 60px;
+    margin-top: 70px;
+    position: relative;
+    bottom: 30px;
 }
 /* bloomy image box */
 .bloomy-box {
@@ -842,8 +844,9 @@ body.quiz-page {
     background: #fff;
     display: inline-block;
     height: 470px;
-    width: 100%;
+    width: 120%;
     position: relative;
+    right: 30px;
 }
 
 .bloomy-box iframe {
@@ -860,12 +863,11 @@ body.quiz-page {
 /*girl story 2*/
 .girlstory-text {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     position:relative;
     bottom: 420px;
-    width: 90%;
+    width: 100%;
     text-align: center;
-    left: 15px;
 }
 .gs-icon1 {
     position: relative;
@@ -874,18 +876,22 @@ body.quiz-page {
 }
 .gs-icon1:nth-of-type(1) {
     bottom: 610px;
-    right: 60px;
+    right: 80px;
 }
 .gs-icon1:nth-of-type(2) {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     bottom: 725px;
-    left: 100px;
+    left: 160px;
     transform: rotate(22deg) /*tilts left*/
 }
 .gs-icon1:nth-of-type(3) {
-    width: 50px;
-    height: 50px;
-    bottom: 460px;
-    left: 80px;
+    bottom: 490px;
+    left: 120px;
+}
+.red-hearts{
+    position: relative;
+    bottom: 450px;
+    width: 600px;
+
 }
