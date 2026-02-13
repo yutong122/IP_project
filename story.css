@@ -1,0 +1,169 @@
+:root {
+    --baby-pink: #FFD6E7;
+    --soft-pink: #FFB6C1;
+    --dark-pink: #FF6BB2;
+    --white: #FFFFFF;
+    --purple: #B19CD9;
+    --light-purple: #F5F0FF;
+    --lighter-purple: #F8F4FF;
+    --dark-purple: #9370DB;
+    --text-color: #4A4A4A;
+}
+
+/*girl story page*/
+.story-container {
+    max-width: 420px;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+/* Header */
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.story-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+/* Bloomy's name */
+.girl-name {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Fuzzy Bubbles', cursive;
+    letter-spacing: 2px;
+    margin-top: 70px;
+    position: relative;
+    text-align: center;
+    bottom: 30px;
+}
+/* bloomy image box */
+.bloomy-box {
+    border: 2px solid #ff6b9e;
+    border-radius: 14px;
+    padding: 15px;
+    background: #fff;
+    display: inline-block;
+    height: 470px;
+    width: 120%;
+    position: relative;
+    right: 30px;
+}
+
+.bloomy-box iframe {
+    width: 90%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 18px;
+    top: 18px;
+}
+
+/*girl story 2*/
+.girlstory-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    position:relative;
+    bottom: 420px;
+    width: 100%;
+    text-align: center;
+}
+.gs-icon1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.gs-icon1:nth-of-type(1) {
+    bottom: 610px;
+    right: 80px;
+}
+.gs-icon1:nth-of-type(2) {
+    width: 80px;
+    height: 80px;
+    bottom: 725px;
+    left: 160px;
+    transform: rotate(22deg) 
+}
+.gs-icon1:nth-of-type(3) {
+    bottom: 490px;
+    left: 120px;
+}
+.red-hearts{
+    position: relative;
+    bottom: 450px;
+    width: 600px;
+
+}
+
+/* STORY PAGE BUTTONS */
+
+.story-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Common button style */
+.story-btn {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* View Story */
+.view-story-btn {
+    width: 320px;                 
+    background-color: var(--dark-pink);    
+    color: white;
+    display: block;
+    margin: 0 auto 15px auto;
+    margin-top: 18px;
+    text-decoration: none;
+}
+
+.view-story-btn:hover {
+    background-color: #cf478b;
+}
+
+/* Bottom buttons container */
+.bottom-story-buttons {
+    width: 320px;                 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+/* Bloomy button */
+.bloomy-btn {
+    width: 150px;
+    background-color: var(--soft-pink);
+    color: #444;
+}
+
+.bloomy-btn:hover {
+    background-color: #ee7fab;
+}
+
+/* Digimon button */
+.digimon-btn {
+    width: 150px;
+    background-color: var(--purple);
+    color: #444;
+}
+
+.digimon-btn:hover {
+    background-color: #a37cda;
+}
