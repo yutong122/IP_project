@@ -15,31 +15,47 @@
         <div class="logo-container">
             <img src="circle-logo.png" alt="Logo" class="logo" />
         </div>
-
+        <!-- Name -->
         <div class="girl-name">BLOOMY</div>
-        <div class="bloomy-box">
-            <img src="" alt="background image">
-        </div>
-        <!--Story-text-box-->
-        <div class="girlstory-text">
-            Bloomy was a girl who liked quiet mornings
-            and soft music in her ears.
-            <br><br><br><br><br><br><br><br><br><br>
-            Technology used to feel exciting, with new ideas,
-            new connections, new possibilities.
+        <!-- Story Card -->
+        <div class="story-card">
+            <!-- Background Image -->
+            <img src="story_backgrounnd1.jpg" alt="background image">
+
+            <!-- Content -->
+            <!-- Top Text -->
+            <p class="story-text-top">
+                Bloomy was a girl who liked quiet mornings
+                and soft music in her ears.
+            </p>
+            <!-- Bottom Text -->
+            <p class="story-text-bottom">
+                Technology used to feel exciting, with new ideas,
+                new connections, new possibilities.
+            </p>
         </div>
         <!--stories icon-->
         <img src="local-area.png" class="gs-icon1" alt="Internet Icon">
         <img src="headphones.png" class="gs-icon1" alt="Headphone Icon">
         <img src="connection.png" class="gs-icon1" alt="Connection Icon">
-        <div class="red-hearts">❤️ 🤍 🤍 🤍 🤍 🤍 🤍 🤍</div>
+
+        <!-- Hearts -->
+        <div class="red-hearts">
+            <div class="colour-heart" data-page="1">1</div> <!-- red heart -->
+            <div class="heart" data-page="2">2</div> <!-- transparent heart -->
+            <div class="heart" data-page="3">3</div>
+            <div class="heart" data-page="4">4</div>
+            <div class="heart" data-page="5">5</div>
+            <div class="heart" data-page="6">6</div>
+            <div class="heart" data-page="7">7</div>
+            <div class="heart" data-page="8">8</div>
+        </div>
+
         <!--next button-->
         <a href="girl-story3.html" class="next-btn">
-            <img src="next-arrow.png" alt="Next"> 
+            <img src="next-arrow.png" alt="Next">
         </a>
     </div>
-    
-
     <!-- BOTTOM NAV (5 icons) -->
     <nav class="nav">
         <img src="quiz icon.png" alt="Quiz">
@@ -49,6 +65,21 @@
         <img src="profile icon.png" alt="Profile">
     </nav>
 
-</body>
+    <script>
+        // Select all hearts
+        const hearts = document.querySelectorAll('.red-hearts .heart, .red-hearts .colour-heart');
 
+        hearts.forEach(heart => {
+            heart.addEventListener('click', () => {
+                const pageNumber = heart.dataset.page;
+
+                // Redirect to corresponding story page
+                window.location.href = `girl-story${pageNumber}.html`;
+            });
+        });
+    </script>
+
+</body>
 </html>
+
+>
