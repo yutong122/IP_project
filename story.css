@@ -136,7 +136,12 @@
 .view-story-btn:hover {
     background-color: #cf478b;
 }
-
+.bloomy-theme {
+    background-color: var(--dark-pink);
+}
+.digimon-theme {
+    background-color: var(--dark-purple);
+}
 /* Bottom buttons container */
 .bottom-story-buttons {
     width: 320px;                 
@@ -145,7 +150,11 @@
     justify-content: space-between;
     margin-bottom: 25px;
 }
-
+/* Active story button */
+.story-btn.active {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
 /* Bloomy button */
 .bloomy-btn {
     width: 150px;
