@@ -36,10 +36,11 @@
             </p>
         </div>
         <!--stories icon-->
-        <img src="local-area.png" class="gs-icon1" alt="Internet Icon">
-        <img src="headphones.png" class="gs-icon1" alt="Headphone Icon">
-        <img src="connection.png" class="gs-icon1" alt="Connection Icon">
-
+        <div class="icons-container">
+            <img src="local-area.png" class="gs-icon1" alt="Internet Icon">
+            <img src="headphones.png" class="gs-icon1" alt="Headphone Icon">
+            <img src="connection.png" class="gs-icon1" alt="Connection Icon">
+        </div>
         <!-- Hearts -->
         <div class="red-hearts">
             <div class="colour-heart" data-page="1">1</div> <!-- red heart -->
@@ -53,7 +54,7 @@
         </div>
 
         <!--next button-->
-        <a href="bloomy-story3.html" class="next-btn">
+        <a href="bloomy-story2.html" class="next-btn">
             <img src="next-arrow.png" alt="Next">
         </a>
     </div>
@@ -75,12 +76,13 @@
                 const pageNumber = heart.dataset.page;
 
                 // Redirect to corresponding story page
-                window.location.href = `girl-story${pageNumber}.html`;
+                window.location.href = `bloomy_story${pageNumber}.html`;
             });
         });
     </script>
 
 </body>
+
 </html>
 
 >

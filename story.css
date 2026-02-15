@@ -68,42 +68,6 @@
     top: 18px;
 }
 
-/*girl story 2*/
-.girlstory-text {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    position:relative;
-    bottom: 420px;
-    width: 100%;
-    text-align: center;
-}
-.gs-icon1 {
-    position: relative;
-    width: 50px;
-    height: 50px;
-}
-.gs-icon1:nth-of-type(1) {
-    bottom: 610px;
-    right: 80px;
-}
-.gs-icon1:nth-of-type(2) {
-    width: 80px;
-    height: 80px;
-    bottom: 725px;
-    left: 160px;
-    transform: rotate(22deg) 
-}
-.gs-icon1:nth-of-type(3) {
-    bottom: 490px;
-    left: 120px;
-}
-.red-hearts{
-    position: relative;
-    bottom: 450px;
-    width: 600px;
-
-}
-
 /* STORY PAGE BUTTONS */
 
 .story-buttons {
@@ -181,7 +145,6 @@ a {
     text-decoration: none;
 }
 /*GIRL STORY 2*/
-
 .story-card {
   position: relative;
   width: 100%;
@@ -220,7 +183,7 @@ a {
 .story-text-bottom {
   font-family: 'Roboto', sans-serif;
   position: absolute;
-  bottom: 50px;
+  bottom: 70px;
   left: 20px;
   right: 20px;
   z-index: 2;
@@ -229,30 +192,36 @@ a {
   text-align: center;
   line-height: 1.2;
 }
-/*stories icon*/
+/*girl story 2*/
+.girlstory-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    position:relative;
+    bottom: 420px;
+    width: 100%;
+    text-align: center;
+}
 .gs-icon1 {
-    position: absolute;
+    position: relative;
     width: 60px;
     height: 60px;
 }
 .gs-icon1:nth-of-type(1) {
-    right: 450px;
-    margin-bottom: 300px;
+    bottom: 300px;
+    right: 60px;
 }
 .gs-icon1:nth-of-type(2) {
     width: 80px;
     height: 80px;
-    margin-bottom: 400px;
-    left: 430px;
+    bottom: 400px;
+    left: 120px;
     transform: rotate(22deg) 
 }
 .gs-icon1:nth-of-type(3) {
-    left: 460px;
-    margin-bottom: 200px;
+    bottom: 110px;
+    left: 70px;
 }
-
 /*heart buttons*/
-
 .red-hearts {
   display: flex;
   justify-content: center;
@@ -265,7 +234,7 @@ a {
 .heart {
   width: 40px;               
   height: 40px;
-  margin-top: 460px;
+  bottom: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,7 +288,7 @@ a {
   cursor: default;
   position: relative;
   flex-shrink: 0;
-  margin-top: 460px;
+  bottom: 90px;
 }
 
 /* Next button */
@@ -333,16 +302,13 @@ a {
   width: 40px;
   height: 40px;
   position: relative;
-  bottom: 510px;
+  bottom: 150px;
   left: 260px;
   transition: transform 0.3s ease;
 }
 .next-btn img:hover {
   transform: scale(1.2);
 }
-
-
-
 
 /*robot story page*/
 .story-container {
@@ -401,3 +367,9 @@ a {
     left: 18px;
     top: 18px;
 }
+
+
+
+
+
+
