@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>DigiBloom Intro</title>
@@ -10,117 +11,134 @@
 
 <body>
 
-<!-- LOGO -->
-<div class="logo-container">
-    <img src="circle-logo.png" alt="Logo" class="logo" />
-</div>
+    <!-- LOGO -->
+    <div class="logo-container">
+        <img src="circle-logo.png" alt="Logo" class="logo" />
+    </div>
 
-<div class="intro-wrapper">
+    <div class="intro-wrapper">
 
-    <div class="slides" id="slides">
+        <div class="slides" id="slides">
 
-        <!-- Slide 1 -->
-        <div class="slide">
-            <img src="intro1.jpg" class="intro-image" alt="Intro Image">
-            <p>In a world filled with glowing screens and endless notifications, a young girl tries to find balance.</p>
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="intro1.jpg" class="intro-image" alt="Intro Image">
+                <p>In a world filled with glowing screens and endless notifications, a young girl tries to find balance.
+                </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="intro2.png" class="intro-image" alt="Intro Image">
+                <p>Technology helps her learn and connect. But slowly, something begins to grow...</p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="intro3.jpg" class="intro-image" alt="Intro Image">
+                <p>From endless scrolling and distractions, a robot begins to emerge.</p>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="image-box">Image</div>
+                <p>The robot feeds on digital overload, growing stronger every time balance is lost.</p>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <img src="intro5.jpg" class="intro-image" alt="Intro Image">
+                <p>But the girl is not powerless. With awareness and healthier choices, she can regain control.</p>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide final">
+                <div class="image-box">Image</div>
+                <p><strong>You're Bloomy now!</strong><br>Let’s defeat Digimon together.</p>
+                <button class="start-btn">START</button>
+            </div>
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="slide">
-            <img src="intro2.png" class="intro-image" alt="Intro Image">
-            <p>Technology helps her learn and connect. But slowly, something begins to grow...</p>
-        </div>
+        <!-- Dots -->
+        <div class="dots" id="dots"></div>
 
-        <!-- Slide 3 -->
-        <div class="slide">
-            <img src="intro3.jpg" class="intro-image" alt="Intro Image">
-            <p>From endless scrolling and distractions, a robot begins to emerge.</p>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="slide">
-            <div class="image-box">Image</div>
-            <p>The robot feeds on digital overload, growing stronger every time balance is lost.</p>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="slide">
-            <img src="intro5.jpg" class="intro-image" alt="Intro Image">
-            <p>But the girl is not powerless. With awareness and healthier choices, she can regain control.</p>
-        </div>
-
-        <!-- Slide 6 -->
-        <div class="slide final">
-            <div class="image-box">Image</div>
-            <p><strong>You're Bloomy now!</strong><br>Let’s defeat Digimon together.</p>
-            <button class="start-btn">START</button>
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="homepage1.html"><button id="skipBtn">Skip</button></a>
+            <a href="homepage1.html"></a><button id="nextBtn">Next</button></a>
         </div>
 
     </div>
 
-    <!-- Dots -->
-    <div class="dots" id="dots"></div>
+    <script>
 
-    <!-- Buttons -->
-    <div class="buttons">
-        <a href="homepage1.html"><button id="skipBtn">Skip</button></a>
-        <a href="homepage1.html"></a><button id="nextBtn">Next</button></a>
-    </div>
+        let currentSlide = 0;
+        const slides = document.getElementById("slides");
+        const slideElements = document.querySelectorAll(".slide");
+        const totalSlides = slideElements.length;
+        const dotsContainer = document.getElementById("dots");
+        const nextBtn = document.getElementById("nextBtn");
+        const skipBtn = document.getElementById("skipBtn");
 
-</div>
+        /* Create Dots */
+        function createDots() {
+            dotsContainer.innerHTML = "";
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
 
-<script>
+                if (i === currentSlide) {
+                    dot.classList.add("active");
+                }
 
-let currentSlide = 0;
-const slides = document.getElementById("slides");
-const totalSlides = document.querySelectorAll(".slide").length;
-const dotsContainer = document.getElementById("dots");
+                dot.addEventListener("click", () => {
+                    currentSlide = i;
+                    updateSlide();
+                });
 
-function createDots() {
-    dotsContainer.innerHTML = "";
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (i === currentSlide) dot.classList.add("active");
-        dot.addEventListener("click", () => {
-            currentSlide = i;
-            updateSlide();
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        /* Update Slide */
+        function updateSlide() {
+            const slideWidth = slideElements[0].offsetWidth;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            createDots();
+
+            // Hide buttons on last slide
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.classList.add("hidden");
+                skipBtn.classList.add("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+                skipBtn.classList.remove("hidden");
+            }
+        }
+
+        /* Next Button */
+        nextBtn.addEventListener("click", () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
         });
-        dotsContainer.appendChild(dot);
-    }
-}
 
-function updateSlide() {
-    slides.style.transform = `translateX(-${currentSlide * 600}px)`;
-    createDots();
+        /* Skip Button */
+        skipBtn.addEventListener("click", () => {
+            window.location.href = "homepage1.html";
+        });
 
-    document.getElementById("prevBtn").disabled = currentSlide === 0;
-    document.getElementById("nextBtn").disabled = currentSlide === totalSlides - 1;
-}
-
-document.getElementById("nextBtn").onclick = () => {
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++;
+        /* Init */
+        createDots();
         updateSlide();
-    }
-};
 
-document.getElementById("prevBtn").onclick = () => {
-    if (currentSlide > 0) {
-        currentSlide--;
-        updateSlide();
-    }
-};
+        /* Keep layout correct on resize */
+        window.addEventListener("resize", updateSlide);
 
-document.getElementById("skipBtn").onclick = () => {
-    currentSlide = totalSlides - 1;
-    updateSlide();
-};
-
-createDots();
-updateSlide();
-
-</script>
+    </script>
 
 </body>
+
 </html>
