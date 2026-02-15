@@ -22,102 +22,130 @@
         <!-- Title -->
         <h1 class="rewards-title">REWARDS</h1>
 
+
         <!-- Rewards List -->
         <!-- Stage 1 -->
         <div class="reward-item">
-            <div>
+            <div class="rewards-text">
                 <div class="reward-stage">Stage 1</div>
                 <div class="reward-description">
                     Vanilla Cone from McDonald’s
                 </div>
+                <div class="claim-wrapper">
+                    <button class="claim-btn active">CLAIM</button>
+                    <span class="tick" style="display:none;">✔</span>
+                </div>
             </div>
-            <button class="claim-btn active">CLAIM</button>
         </div>
         <div class="line"></div>
         <!-- Stage 2 -->
         <div class="reward-item">
-            <div>
+            <div class="rewards-text">
                 <div class="reward-stage">Stage 2</div>
                 <div class="reward-description">
                     Medium Classic Milk Tea with Pearls from LiHo
                 </div>
+                <button class="claim-btn disabled">CLAIM</button>
             </div>
-            <button class="claim-btn disabled">CLAIM</button>
         </div>
         <div class="line"></div>
         <!-- Stage 3 -->
         <div class="reward-item">
-            <div>
+            <div class="rewards-text">
                 <div class="reward-stage">Stage 3</div>
                 <div class="reward-description">
                     Golden Village $2 Discount Voucher
                 </div>
+                <button class="claim-btn disabled">CLAIM</button>
             </div>
-            <button class="claim-btn disabled">CLAIM</button>
-            <div class="line"></div>
-            <!-- Stage 4 -->
-            <div class="reward-item">
-                <div>
-                    <div class="reward-stage">Stage 4</div>
-                    <div class="reward-description">
-                        ArtFriend $5 Voucher (min. spend $15)
-                    </div>
+        </div>
+        <div class="line"></div>
+        <!-- Stage 4 -->
+        <div class="reward-item">
+            <div class="rewards-text">
+                <div class="reward-stage">Stage 4</div>
+                <div class="reward-description">
+                    ArtFriend $5 Voucher (min. spend $15)
                 </div>
                 <button class="claim-btn disabled">CLAIM</button>
-                <div class="line"></div>
-                <!-- Stage 5-->
-                <div class="reward-item">
-                    <div>
-                        <div class="reward-stage">Stage 5</div>
-                        <div class="reward-description">
-                            $5 Popular Voucher
-                        </div>
-                    </div>
-                    <button class="claim-btn disabled">CLAIM</button>
-                    <div class="line"></div>
-                    <!-- Stage 5 -->
-                    <div class="reward-item">
-                    </div>
-                    <!-- Stage 6-->
-                    <div class="reward-item">
-                        <div>
-                            <div class="reward-stage">Stage 6</div>
-                            <div class="reward-description">
-                                $10 Liao Liao Voucher
-                            </div>
-                        </div>
-                        <button class="claim-btn disabled">CLAIM</button>
-                        <div class="line"></div>
-                        <!-- Stage 5 -->
-                        <div class="reward-item">
-                        </div>
-                        <!-- Stage 7-->
-                        <div class="reward-item">
-                            <div>
-                                <div class="reward-stage">Stage 7</div>
-                                <div class="reward-description">
-                                    $10 Liao Liao Voucher
-                                </div>
-                            </div>
-                            <button class="claim-btn disabled">CLAIM</button>
-                            <div class="line"></div>
-                            <!-- Stage 5 -->
-                            <div class="reward-item">
-                            </div>
-                            <!-- Stage 6-->
-                            <div class="reward-item">
-                                <div>
-                                    <div class="reward-stage">Stage 8</div>
-                                    <div class="reward-description">
-                                        $10 Liao Liao Voucher
-                                    </div>
-                                </div>
-                                <button class="claim-btn disabled">CLAIM</button>
-                                <div class="line"></div>
-                                <!-- Stage 7 -->
-                                <div class="reward-item">
-                                </div>
-
+            </div>
+        </div>
+        <div class="line"></div>
+        <!-- Stage 5 -->
+        <div class="reward-item">
+            <div class="rewards-text">
+                <div class="reward-stage">Stage 5</div>
+                <div class="reward-description">
+                    $5 Popular Voucher
+                </div>
+                <button class="claim-btn disabled">CLAIM</button>
+            </div>
+        </div>
+        <div class="line"></div>
+        <!-- Stage 6 -->
+        <div class="reward-item">
+            <div class="rewards-text">
+                <div class="reward-stage">Stage 6</div>
+                <div class="reward-description">
+                    $10 Llao Llao Voucher
+                </div>
+                <button class="claim-btn disabled">CLAIM</button>
+            </div>
+        </div>
+        <div class="line"></div>
+        <!-- Stage 7 -->
+        <div class="reward-item">
+            <div class="rewards-text">
+                <div class="reward-stage">Stage 7</div>
+                <div class="reward-description">
+                    $15 Popular Voucher
+                </div>
+                <button class="claim-btn disabled">CLAIM</button>
+            </div>
+        </div>
+        <div class="line"></div>
+        <!-- Stage 8 -->
+        <div class="reward-item">
+            <div class="rewards-text">
+                <div class="reward-stage">Stage 8</div>
+                <div class="reward-description">
+                    Tall Drink from Starbucks
+                </div>
+                <button class="claim-btn disabled">CLAIM</button>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
 </body>
+<script>
+document.querySelectorAll(".claim-btn.active").forEach(button => {
+    button.addEventListener("click", function () {
+
+        // Show tick beside button
+        const claimWrapper = this.parentElement;
+        const tick = claimWrapper.querySelector(".tick");
+        if (tick) tick.style.display = "inline";
+
+        // Disable button
+        this.disabled = true;
+        this.textContent = "CLAIMED";
+        this.style.backgroundColor = "gray";
+        this.classList.remove("active");
+
+        // Show popup
+        const popup = document.createElement("div");
+        popup.className = "reward-popup show";
+        popup.textContent = "Reward Redeemed!";
+        document.body.appendChild(popup);
+
+        // Hide popup after 1.5s
+        setTimeout(() => {
+            popup.classList.remove("show");
+            popup.remove();
+        }, 1500);
+    });
+});
+</script>
+
 
 </html>

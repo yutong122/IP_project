@@ -640,6 +640,10 @@ body.quiz-page {
     margin-top: 30px;
 }
 
+.start-text{
+    color: var(--white)
+}
+
 .start-button:hover {
     background-color: var(--purple);
     transform: translateY(-3px);
@@ -674,6 +678,9 @@ body.quiz-page {
 .decoration:nth-child(4) {
     bottom: 30px;
     right: 30px;
+}
+a {                    
+    text-decoration: none;
 }
 
 /*homepage 1*/
@@ -801,4 +808,151 @@ body.quiz-page {
 
 .nav img:hover {
     transform: scale(1.15);
+}
+
+/* ================= REWARDS PAGE ================= */
+body.rewards-page {
+    background: linear-gradient(135deg, var(--light-purple), var(--baby-pink));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.rewards-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 30px;
+    position: relative;
+}
+
+/* Title */
+.rewards-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--dark-purple);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+/* Back Arrow */
+.back-arrow {
+    position: absolute;
+    left: 30px;
+    top: 80px;
+    cursor: pointer;
+}
+
+.back-arrow img {
+    width: 40px;
+    transform: scaleX(-1);   /* Flip arrow to < */
+    transition: 0.2s ease;
+}
+
+.back-arrow img:hover {
+    transform: scaleX(-1) translateX(-4px);
+}
+
+/* Reward Item */
+/* This makes Stage + Reward stack vertically */
+.reward-text {
+    display: flex;
+    flex-direction: column;
+}
+.reward-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+/* Stage Title (Bigger & Bold) */
+.reward-stage {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark-purple);
+    margin-bottom: 6px;
+}
+
+/* Reward Description (Normal) */
+.reward-description {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.4;
+    max-width: 230px;
+    white-space: nowrap;            /* prevents line break */
+}
+
+/* Divider */
+.line {
+    height: 2px;
+    background: rgba(68, 65, 214, 0.3);
+}
+
+/* Claim Button */
+.claim-btn {
+    padding: 6px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    letter-spacing: 1px;
+}
+
+/* Active Button */
+.claim-btn.active {
+    background: var(--purple);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.claim-btn.active:hover {
+    background: var(--dark-purple);
+}
+
+/* Disabled Button */
+.claim-btn.disabled {
+    background: #ddd;
+    color: white;
+    cursor: not-allowed;
+}
+/* Wrapper for button + tick */
+.claim-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tick style */
+.tick {
+    color: red;
+    font-size: 18px;
+    display: none; /* initially hidden */
+}
+
+/* Popup message */
+.reward-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-weight: 700;
+    color: var(--dark-pink);
+    font-size: 16px;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.reward-popup.show {
+    opacity: 1;
+    pointer-events: auto;
 }
