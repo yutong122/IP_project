@@ -571,7 +571,7 @@ body::after {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .quiz-instructions {
@@ -594,7 +594,7 @@ body::after {
 .quiz-container {
     background-color: white;
     border-radius: 20px;
-    padding: 40px;
+    padding: 50px;
     max-width: 900px;
     width: 100%;
     text-align: center;
@@ -606,20 +606,19 @@ body::after {
 body.quiz-page {
     background-color: white;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto';
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 70px;
 }
 
 .quiz-title {
     color: var(--text-color);
     font-family: 'Fuzzy Bubbles';
-    font-size: 46px;
+    font-size: 45px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -631,8 +630,8 @@ body.quiz-page {
     text-decoration: none;
     border: none;
     padding: 20px 60px;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -822,7 +821,7 @@ body.rewards-page {
 /* Container */
 .rewards-container {
     width: 100%;
-    max-width: 420px;
+    max-width: 500px;
     padding: 60px 30px;
     position: relative;
 }
@@ -831,10 +830,11 @@ body.rewards-page {
 .rewards-title {
     text-align: center;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: bold;
     color: var(--dark-purple);
     letter-spacing: 2px;
     margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Back Arrow */
@@ -847,7 +847,7 @@ body.rewards-page {
 
 .back-arrow img {
     width: 40px;
-    transform: scaleX(-1);   /* Flip arrow to < */
+    transform: scaleX(-1);   
     transition: 0.2s ease;
 }
 
@@ -856,7 +856,6 @@ body.rewards-page {
 }
 
 /* Reward Item */
-/* This makes Stage + Reward stack vertically */
 .reward-text {
     display: flex;
     flex-direction: column;
@@ -865,30 +864,32 @@ body.rewards-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
+    padding: 20px 0;
 }
 
-/* Stage Title (Bigger & Bold) */
+/* Stage Title */
 .reward-stage {
     font-size: 20px;
     font-weight: 800;
     color: var(--dark-purple);
     margin-bottom: 6px;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Reward Description (Normal) */
+/* Reward Description */
 .reward-description {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text-color);
-    line-height: 1.4;
+    font-size: 18px;
+    font-weight: 450;
+    color: black;
+    margin-bottom: 12px;
+    margin-top: 10px;
     max-width: 230px;
-    white-space: nowrap;            /* prevents line break */
+    white-space: nowrap;  
 }
 
 /* Divider */
 .line {
-    height: 2px;
+    height: 1.2px;
     background: rgba(68, 65, 214, 0.3);
 }
 
@@ -896,8 +897,8 @@ body.rewards-page {
 .claim-btn {
     padding: 6px 16px;
     border-radius: 10px;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     border: none;
     letter-spacing: 1px;
 }
@@ -931,7 +932,7 @@ body.rewards-page {
 .tick {
     color: red;
     font-size: 18px;
-    display: none; /* initially hidden */
+    display: none; 
 }
 
 /* Popup message */
