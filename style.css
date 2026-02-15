@@ -663,6 +663,7 @@ body.quiz-page {
 .decoration:nth-child(1) {
     top: 30px;
     left: 30px;
+    opacity: 1;
 }
 
 .decoration:nth-child(2) {
