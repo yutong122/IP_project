@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invite a Friend</title>
+<link rel="stylesheet" href="profile.css">
+<link href="normalise.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<header class="top-bar">
+    <a href="profile.html" class="back-btn">
+        <img src="next-arrow.png" alt="Back">
+    </a>
+    <h1>Invite a Friend</h1>
+</header>
+
+
+<main class="content">
+
+  <div class="invite-card">
+    <h2>Invite 5 friends for a reward!</h2>
+
+    <button class="primary-btn" id="openShare">
+      Share My ID
+    </button>
+  </div>
+
+</main>
+
+<!-- Slide Up Panel -->
+<div class="share-panel" id="sharePanel">
+  <div class="share-box">
+
+    <div class="share-header">
+      <span>Share ID</span>
+      <span id="closePanel" class="close">✕</span>
+    </div>
+
+    <div class="id-box">
+      <span id="userId">298087</span>
+      <button id="copyBtn">Copy</button>
+    </div>
+
+    <div class="social-row">
+      <button class="social">WhatsApp</button>
+      <button class="social">Telegram</button>
+      <button class="social">Instagram</button>
+      <button class="social">More</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const openBtn = document.getElementById("openShare");
+const sharePanel = document.getElementById("sharePanel");
+const closePanel = document.getElementById("closePanel");
+const copyBtn = document.getElementById("copyBtn");
+const userId = document.getElementById("userId");
+
+openBtn.onclick = () => {
+  sharePanel.classList.add("active");
+};
+
+closePanel.onclick = () => {
+  sharePanel.classList.remove("active");
+};
+
+copyBtn.onclick = () => {
+  navigator.clipboard.writeText(userId.textContent);
+  copyBtn.textContent = "Copied!";
+  setTimeout(() => {
+    copyBtn.textContent = "Copy";
+  }, 1500);
+};
+</script>
+
+</body>
+</html>
+
