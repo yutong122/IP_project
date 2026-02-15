@@ -2,230 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>DigiBloom Intro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="intro.css">
     <link href="normalise.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <div class="snap-container" id="snapContainer">
-        <!-- Page 1 -->
-        <section class="intro-section" id="page1">
-            <h1 class="page-title">Introduction</h1>
-            <p class="page-subtitle">
-                In a world filled with glowing screens and endless notifications, a young girl tries to find balance. <br>
-                Technology helps her learn, connect, and dream.<br>
-                But slowly, something begins to grow... 
-            </p>
-        </section>
 
-        <div class="floating-icons-container"></div>
-        </section>
-        
-        <!-- Page 2 -->
-        <section class="intro-section" id="page2">
-            <h1 class="page-title">Introduction</h1>
-            <p class="page-subtitle">desc</p>
-            <div class="page-content">
-                desc
-            </div>
-        </section>
-        
-        <!-- Page 3 -->
-        <section class="intro-section" id="page3">
-            <h1 class="page-title">Introduction</h1>
-            <p class="page-subtitle">desc</p>
-            <div class="page-content">
-                desc
-            </div>
-            <a href="homepage1.html" class="continue-btn" id="continueBtn">Begin Your Journey</a>
-        </section>
+<!-- LOGO -->
+<div class="logo-container">
+    <img src="circle-logo.png" alt="Logo" class="logo" />
+</div>
+
+<div class="intro-wrapper">
+
+    <div class="slides" id="slides">
+
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="intro1.jpg" class="intro-image" alt="Intro Image">
+            <p>In a world filled with glowing screens and endless notifications, a young girl tries to find balance.</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="intro2.png" class="intro-image" alt="Intro Image">
+            <p>Technology helps her learn and connect. But slowly, something begins to grow...</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="intro3.jpg" class="intro-image" alt="Intro Image">
+            <p>From endless scrolling and distractions, a robot begins to emerge.</p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <div class="image-box">Image</div>
+            <p>The robot feeds on digital overload, growing stronger every time balance is lost.</p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="intro5.jpg" class="intro-image" alt="Intro Image">
+            <p>But the girl is not powerless. With awareness and healthier choices, she can regain control.</p>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide final">
+            <div class="image-box">Image</div>
+            <p><strong>You're Bloomy now!</strong><br>Let’s defeat Digimon together.</p>
+            <button class="start-btn">START</button>
+        </div>
+
     </div>
-    
-    <!-- Page Indicators -->
-    <div class="page-indicators" id="indicators">
-        <div class="indicator active" data-page="0"></div>
-        <div class="indicator" data-page="1"></div>
-        <div class="indicator" data-page="2"></div>
+
+    <!-- Dots -->
+    <div class="dots" id="dots"></div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <a href="homepage1.html"><button id="skipBtn">Skip</button></a>
+        <a href="homepage1.html"></a><button id="nextBtn">Next</button></a>
     </div>
 
-    <style>
-    /* Floating Icons */
-    .floating-icons-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: -1;
-    }
-    
-    .floating-icon {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        opacity: 0.7;
-        pointer-events: none;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    .floating-icon.icon1 { background-image: url('laptop.jpg'); }
-    .floating-icon.icon2 { background-image: url('phone.jpg'); }
-    .floating-icon.icon3 { background-image: url('cursor.jpg'); }
-    .floating-icon.icon4 { background-image: url('noti.jpg'); }
-    .floating-icon.icon5 { background-image: url('girlsleepy.jpg'); }
-    
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            transform: translateY(-20px) rotate(10deg);
-        }
-    }
+</div>
 
-    .intro-section {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .page-title, .page-subtitle {
-        position: relative;
-        z-index: 1;
-    }
-    </style>
+<script>
 
-    <script>
-    //INTRO
+let currentSlide = 0;
+const slides = document.getElementById("slides");
+const totalSlides = document.querySelectorAll(".slide").length;
+const dotsContainer = document.getElementById("dots");
 
-// Snap scroll functionality
-        const container = document.getElementById('snapContainer');
-        const indicators = document.querySelectorAll('.indicator');
-        const continueBtn = document.getElementById('continueBtn');
-        const sections = document.querySelectorAll('.intro-section');
-        
-        // Update active indicator on scroll
-        container.addEventListener('scroll', updateIndicator);
-
-        function updateIndicator() {
-            const scrollPosition = container.scrollTop;
-            const pageHeight = window.innerHeight;
-            const currentPage = Math.round(scrollPosition / pageHeight);
-
-            indicators.forEach((indicator, index) => {
-                if (index === currentPage) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-        
-        // Click indicators to jump to page
-        indicators.forEach(indicator => {
-            indicator.addEventListener('click', () => {
-                const pageIndex = parseInt(indicator.getAttribute('data-page'));
-                container.scrollTo({
-                    top: pageIndex * window.innerHeight,
-                    behavior: 'smooth'
-                });
-            });
+function createDots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === currentSlide) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+            currentSlide = i;
+            updateSlide();
         });
-        
-        // Continue button
-        continueBtn.addEventListener('click', () => {
-            alert('Continuing to homepage...');
-        });
-        
-        // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' || e.key === 'PageDown' || 
-            e.key === 'ArrowUp' || e.key === 'PageUp' || 
-            e.key === ' ') {
-            e.preventDefault();
-        }
+        dotsContainer.appendChild(dot);
+    }
+}
 
-        const pageHeight = window.innerHeight;
-        const currentScroll = container.scrollTop;
-        const currentPage = Math.round(currentScroll / pageHeight);
+function updateSlide() {
+    slides.style.transform = `translateX(-${currentSlide * 600}px)`;
+    createDots();
 
-        if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
-            const nextPage = Math.min(currentPage + 1, sections.length - 1);
-            container.scrollTo({
-                top: nextPage * pageHeight,
-                behavior: 'smooth'
-            });
-        }
+    document.getElementById("prevBtn").disabled = currentSlide === 0;
+    document.getElementById("nextBtn").disabled = currentSlide === totalSlides - 1;
+}
 
-        if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-            const prevPage = Math.max(currentPage - 1, 0);
-            container.scrollTo({
-                top: prevPage * pageHeight,
-                behavior: 'smooth'
-            });
-        }
-    });
+document.getElementById("nextBtn").onclick = () => {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+    }
+};
 
-            // Fix for initial load
-        window.addEventListener('load', () => {
-            updateIndicator();
-        });
-    
-            // Initialize
-        console.log('Snap scroll intro page loaded');
+document.getElementById("prevBtn").onclick = () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+    }
+};
 
+document.getElementById("skipBtn").onclick = () => {
+    currentSlide = totalSlides - 1;
+    updateSlide();
+};
 
-        //floating icons
+createDots();
+updateSlide();
 
-        document.addEventListener('DOMContentLoaded', function() {
-        const container = document.querySelector('.floating-icons-container');
-        const numIcons = 15; 
-        const iconClasses = ['icon1', 'icon2', 'icon3', 'icon4', 'icon5']; 
-        
-        // Create floating icons
-        for (let i = 0; i < numIcons; i++) {
-            const icon = document.createElement('div');
-            icon.classList.add('floating-icon');
-            
-            // Randomly select an icon class
-            const randomIconClass = iconClasses[Math.floor(Math.random() * iconClasses.length)];
-            icon.classList.add(randomIconClass);
-            
-            // Random position
-            const randomLeft = Math.random() * 100; // 0-100%
-            const randomTop = Math.random() * 100; // 0-100%
-            
-            // Random size variation
-            const randomSize = 20 + Math.random() * 40; // 20px to 60px
-            
-            // Random animation delay and duration for staggered effect
-            const randomDelay = Math.random() * 5; // 0-5s delay
-            const randomDuration = 4 + Math.random() * 4; // 4-8s duration
-            
-            // Apply styles
-            icon.style.left = `${randomLeft}%`;
-            icon.style.top = `${randomTop}%`;
-            icon.style.width = `${randomSize}px`;
-            icon.style.height = `${randomSize}px`;
-            icon.style.animationDelay = `${randomDelay}s`;
-            icon.style.animationDuration = `${randomDuration}s`;
-            
-            container.appendChild(icon);
-        }
-    });
+</script>
 
-    </script>
 </body>
 </html>
