@@ -13,6 +13,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(to bottom, #e9d5ff, #fbcfe8);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 40px 0;
