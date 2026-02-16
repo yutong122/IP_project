@@ -29,7 +29,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--baby-pink);
+            background-color: var(--purple);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +53,7 @@
         .story-wrapper {
             width: 900px;
             height: 100%;
-            background: radial-gradient(var(--white), var(--baby-pink));
+            background: radial-gradient(var(--white), var(--purple));
             border-radius: 25px;
             overflow: hidden;
             position: relative;
@@ -140,6 +140,50 @@
             background: #ccc;
             cursor: not-allowed;
         }
+
+/* Heart Indicator */
+.heart-indicator {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Heart Button */
+.heart {
+    width: 32px;
+    height: 28px;
+    background-color: var(--light-purple);
+    clip-path: polygon(
+        50% 90%,
+        0% 40%,
+        15% 15%,
+        35% 10%,
+        50% 25%,
+        65% 10%,
+        85% 15%,
+        100% 40%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.heart:hover {
+    transform: scale(1.1);
+}
+
+.heart.active {
+    background-color: var(--dark-purple);
+    transform: scale(1.15);
+}
 
         /* bottom nav */
         .nav {
@@ -253,6 +297,8 @@
             <button onclick="nextSlide()" id="nextBtn">Next</button>
         </div>
     </div>
+
+    <div class="heart-indicator" id="hearts"></div>
     <!-- BOTTOM NAV (5 icons) -->
     <nav class="nav">
         <a href="start_quiz.html"><img src="quiz icon.png" alt="Quiz"></a>
@@ -264,28 +310,56 @@
 
     <script>
 
-        let currentSlide = 0;
-        const slides = document.getElementById("slides");
-        const totalSlides = document.querySelectorAll(".slide").length;
+let currentSlide = 0;
+const slides = document.getElementById("slides");
+const totalSlides = document.querySelectorAll(".slide").length;
+const heartsContainer = document.getElementById("hearts");
 
-        function updateSlide() {
-            slides.style.transform = `translateX(-${currentSlide * 900}px)`;
-            document.getElementById("prevBtn").disabled = currentSlide === 0;
-            document.getElementById("nextBtn").disabled = currentSlide === totalSlides - 1;
+function createHearts() {
+    heartsContainer.innerHTML = "";
+
+    for (let i = 0; i < totalSlides; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.textContent = i + 1;
+
+        if (i === currentSlide) {
+            heart.classList.add("active");
         }
-        function nextSlide() {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateSlide();
-            }
-        }
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
-            }
-        }
+
+        heart.addEventListener("click", () => {
+            currentSlide = i;
+            updateSlide();
+        });
+
+        heartsContainer.appendChild(heart);
+    }
+}
+
+function updateSlide() {
+    slides.style.transform = `translateX(-${currentSlide * 900}px)`;
+    document.getElementById("prevBtn").disabled = currentSlide === 0;
+    document.getElementById("nextBtn").disabled = currentSlide === totalSlides - 1;
+    createHearts();
+}
+
+function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
         updateSlide();
+    }
+}
+
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+    }
+}
+
+createHearts();
+updateSlide();
+
     </script>
 </body>
 
