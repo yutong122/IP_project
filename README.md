@@ -34,7 +34,7 @@ Flaticon website for our icons.
 <b> Testing</b><br>
 <br>
 <br>
-<b> Credits</b><br><br>
+<b> Credits</b><br>
 <b> Content</b><br>
 <br><br>
 <b> Media</b><br>
