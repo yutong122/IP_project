@@ -60,27 +60,36 @@ body::after {
     max-width: 420px;
     text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
 .logo {
     color: var(--dark-purple);
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 800;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
     gap: 15px;
     position: relative;
     z-index: 1;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.logo::before {
-    content: '🌸';
+.logo-flower {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.flower {
     font-size: 48px;
+    line-height: 1;
+    transform: translateX(-80px);
 }
 
 @keyframes float {
