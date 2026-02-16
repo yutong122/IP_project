@@ -44,7 +44,6 @@ Flaticon website for our icons.
 <b> Acknowledgements</b><br>
 -	Digi Bloom incorporates ideas inspired by familiar digital systems to enhance usability and engagement. The quiz questions that link to update of progress bar drew inspiration from games where one need to be strong to defeat the other.<br>
 -	Digi Bloom also draws inspiration from wellness and habit tracking apps, where progress is visualised through simple indicators such as bars, colour changes, and milestones. The use of calming and dark background transitions is influenced by these systems, helping users understand their current state of digital balance without relying on complex instructions.
-
 <br>
 
 
