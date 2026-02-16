@@ -19,7 +19,29 @@ We started to design our wireframe so we can have a rough idea of how our app wo
 We first did some sketches then we started our low and high fidelity wireframe on figma.<br>
 Below is our wireframe link:<br>
 https://www.figma.com/design/L8wZS2vXYzAZNRA3fR2fcl/IP-App-Design?node-id=0-1&t=2OzqGuP3XzSH1iKD-1<br>
-Afterwards We began to code our layout on website and used css style and java script to complete our pages.<br>
+Afterwards we began to code our layout on website and used css style and java script to complete our pages.<br>
+<br>
+<b>Existing Features</b><br>
+We have <br>
+<br>
+<b> Technologies Used</b><br>
+https://www.figma.com<br>
+We used Figma for our wireframe.<br>
+Pinterest for our images and design references.
+https://www.flaticon.com/<br>
+Flaticon website for our icons.
+<br>
+<b> Testing</b><br>
+<br>
+<br>
+<b> Credits</b><br><br>
+<b> Content</b><br>
+<br><br>
+<b> Media</b><br>
+- The images were taken from Google, Pinterest.<br>
+- The Icons were taken from FlatIcon website.<br>
+- The video of the characters was from SketchFab where both of us uploaded our 3d model of the characters.<br><br>
+<b> Acknowledgements</b><br>
 <br>
 
 
