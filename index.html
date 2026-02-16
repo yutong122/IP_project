@@ -7,23 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link href="normalise.css" rel="stylesheet" type="text/css" />
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
-<div class="loading-screen" id="loadingScreen">
-    <div class="logo-container">
-        <img src="logo-nobg.jpg" alt="Digi Bloom" class="loading-logo">
-    </div>
-    
-    <div class="loading-text-container">
-        <div class="loading-text">Loading</div>
-    </div>
-    
-    <div class="loading-message" id="loadingMessage">
-        Preparing your mindful space...
-    </div>
-</div>
-
 <body>
+
     <div class="login-container">
         
         <div class="logo-flower">
@@ -60,5 +48,28 @@
             </div>
         </form>
     </div>
+
+<div class="loading-screen" id="loadingScreen">
+    <div class="logo-container">
+        <lottie-player 
+            src="loading-cat.json"
+            background="transparent"
+            speed="1"
+            style="width: 150px; height: 150px;"
+            loop
+            autoplay>
+        </lottie-player>
+    </div>
+    
+    <div class="loading-text-container">
+        <div class="loading-text">Loading</div>
+    </div>
+    
+    <div class="loading-message" id="loadingMessage">
+        Preparing your mindful space...
+    </div>
+</div>
+
 </body>
+
 </html>
