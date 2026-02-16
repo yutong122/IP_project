@@ -73,7 +73,6 @@ body::after {
     white-space: nowrap;
     gap: 15px;
     position: relative;
-    left: 170px;
     z-index: 1;
     letter-spacing: 0.4px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
@@ -256,6 +255,23 @@ body::after {
 
 .signup-container {
     max-width: 500px;
+}
+
+.signup-logo {
+    color: var(--dark-purple);
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .name-group {
