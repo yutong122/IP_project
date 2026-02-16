@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewards</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="story.css">
+    <title>All Stages</title>
+    <link rel="stylesheet" href="stages.css">
     <link href="normalise.css" rel="stylesheet" type="text/css" />
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
 
-<body class="rewards-page">
-    <!-- Back Arrow -->
-    <div class="back-arrow">
-        <a href="homepage2.html">
-            <img src="next-arrow.png" alt="Back">
-        </a>
-    </div>
-    <!-- Stage 1 -->
-    <!-- STAGES CONTAINER -->
-    <!-- Purple Layer -->
-    <section class="stages-layer">
+    <div class="container">
 
-        <h1 class="rewards-title">ALL STAGES</h1>
-
-        <div class="stages-grid">
-            <a href="stage1.html" class="stage-card">STAGE 1</a>
-            <a href="stage2.html" class="stage-card">STAGE 2</a>
-
-            <div class="stage-card locked">STAGE 3</div>
-            <div class="stage-card locked">STAGE 4</div>
-
-            <div class="stage-card locked">STAGE 5</div>
-            <div class="stage-card locked">STAGE 6</div>
-
-            <div class="stage-card locked">STAGE 7</div>
-            <div class="stage-card locked">STAGE 8</div>
+        <div class="header">
+            <a href="homepage2.html" class="back-btn">
+                <img src="next-arrow.png" alt="Back">
+            </a>
+            <h1>ALL STAGES</h1>
         </div>
 
-    </section>
+        <div class="stages-grid">
+            <div class="stage unlocked"> <a href="start_quiz.html">STAGE 1</a></div>
+            <div class="stage unlocked"> STAGE 2 </div>
+
+            <div class="stage locked">STAGE 3 <span class="lock">🔒</span></div>
+            <div class="stage locked">STAGE 4 <span class="lock">🔒</span></div>
+
+            <div class="stage locked">STAGE 5 <span class="lock">🔒</span></div>
+            <div class="stage locked">STAGE 6 <span class="lock">🔒</span></div>
+
+            <div class="stage locked">STAGE 7 <span class="lock">🔒</span></div>
+            <div class="stage locked">STAGE 8 <span class="lock">🔒</span></div>
+        </div>
+
+        <div class="footer">
+            <p>Complete each stage to unlock the next one!</p>
+        </div>
+
+    </div>
+</body>
+
     <!-- BOTTOM NAV (5 icons) -->
     <nav class="nav">
         <a href="start_quiz.html"><img src="quiz icon.png" alt="Quiz"></a>
         <a href="bloomy_main_page.html"><img src="stories icon.png" alt="Stories"></a>
-        <a href="homepage1.html"><img src="home icon.png" alt="Home"></a>
+        <a href="homepage2.html"><img src="home icon.png" alt="Home"></a>
         <a href="rewards.html"><img src="rewards icon.png" alt="Rewards"></a>
         <a href="profile.html"><img src="profile icon.png" alt="Profile"></a>
     </nav>
-</body>
-
+    
 </html>
