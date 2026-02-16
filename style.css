@@ -73,6 +73,7 @@ body::after {
     white-space: nowrap;
     gap: 15px;
     position: relative;
+    left: 170px;
     z-index: 1;
     letter-spacing: 0.4px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
