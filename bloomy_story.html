@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             box-sizing: border-box;
@@ -35,50 +35,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            margin:0;
+            min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        /* top logo */
-        .logo-container {
-            position: absolute;
-            top: 24px;
-            left: 32px;
-            z-index: 5;
-        }
-
-        .logo {
-            width: 90px;
         }
 
         /* Story Wrapper */
         .story-wrapper {
-            width: 900px;
-            height: 100%;
+            width: 90%;
+            max-width: 900px;
+            min-height: 90vh;
             background: radial-gradient(var(--white), var(--baby-pink));
             border-radius: 25px;
             overflow: hidden;
             position: relative;
+            bottom:0px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Slides container */
         .slides {
             display: flex;
-            width: 900%;
-            height: 100%;
+            width: 100%;
             transition: transform 0.5s ease-in-out;
         }
 
-        /* Single Slide */
         .slide {
-            width: 900px;
+            width: 100%;
             flex-shrink: 0;
             padding: 40px 20px;
             text-align: center;
-            position: relative;
-            right: 10px;
         }
+
 
         /* Title */
         .slide h2 {
@@ -90,24 +78,27 @@
 
         /* Image Placeholder */
         .image-placeholder {
-            display: inline-block;
-            /* shrink to image size */
-            margin: 0 auto 25px;
+            margin: 20px auto;
             border-radius: 20px;
             border: 1.8px solid #FF0D82;
             overflow: hidden;
+            width: 240px;
+            /* fixed visual size */
+            max-width: 80%;
+            position: relative;
+            bottom: 10px;
+            height:340px;
         }
 
         .image-placeholder img {
-            display: block;
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 20px;
         }
 
 
         /* Text */
         .slide p {
+            font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.5;
             max-width: 650px;
@@ -126,6 +117,8 @@
         }
 
         button {
+            position: relative;
+            top:50px;
             background: var(--dark-pink);
             border: none;
             padding: 12px 25px;
@@ -149,6 +142,7 @@
         .heart-indicator {
             position: absolute;
             bottom: 80px;
+            left:15px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -228,17 +222,18 @@
                 <p>Bloomy was a girl who liked quiet mornings and soft music in her ears.</p>
                 <br>
                 <div class="image-placeholder">
-                    <img src="bg1.png" alt="bloomy background 1" height="200px" width="250px">
+                    <img src="bg1.png" alt="bloomy background 1" >
                 </div>
                 <p>Technology once felt exciting — full of new ideas and possibilities.</p>
             </div>
             <!--part2-->
             <div class="slide">
                 <h2>BLOOMY</h2>
-                <p> But then, she began spending most of her free time on her phone,<br> often without meaning to.</p>
+                <p> But then, she began spending most of her free time on her phone,<br> often without meaning to.
+                </p>
                 <br>
                 <div class="image-placeholder">
-                    <img src="bg2.png" alt="bloomy background 2" height="200px" width="250px">
+                    <img src="bg2.png" alt="bloomy background 2" >
                 </div>
                 <p>Over time, Bloomy stopped noticing when hours slipped by.</p>
             </div>
@@ -246,7 +241,7 @@
             <div class="slide">
                 <h2>BLOOMY</h2>
                 <div class="image-placeholder">
-                    <img src="bg3.png" alt="bloomy background 3" height="200px" width="250px">
+                    <img src="bg3.png" alt="bloomy background 3">
                 </div>
                 <p>Her phone became the first thing she reached for<br>
                     and the last thing she put down. <br>
@@ -259,7 +254,7 @@
                 <p> Bloomy didn’t think anything was wrong.</p>
                 <br>
                 <div class="image-placeholder">
-                    <img src="bg4.png" alt="bloomy background 4" height="200px" width="250px">
+                    <img src="bg4.png" alt="bloomy background 4">
                 </div>
                 <p>She just felt tired. Unfocused. Disconnected from herself.</p>
             </div>
@@ -273,14 +268,14 @@
                 </p>
                 <br>
                 <div class="image-placeholder">
-                    <img src="bg5.png" alt="bloomy background 5" height="200px" width="250px">
+                    <img src="bg5.png" alt="bloomy background 5">
                 </div>
             </div>
             <!--part6-->
             <div class="slide">
                 <h2>BLOOMY</h2>
                 <div class="image-placeholder">
-                    <img src="bg6.png" alt="bloomy background 6" height="200px" width="250px">
+                    <img src="bg6.png" alt="bloomy background 6">
                 </div>
                 <p>She began questioning her habits, recognizing patterns,<br>
                     and listening to how her body and mind
@@ -290,12 +285,13 @@
             <div class="slide">
                 <h2>BLOOMY</h2>
                 <p>Bloomy doesn’t aim to quit technology or reject it.<br>
-                    She wants BALANCE. CONTROL.<br>
-                    SPACE to BREATHE.</p><br>
+                    She wants BALANCE. CONTROL.
+                    SPACE to BREATHE.</p>
                 <div class="image-placeholder">
-                    <img src="bg7.png" alt="bloomy background 7" height="200px" width="220px">
+                    <img src="bg7.png" alt="bloomy background 7" >
                 </div>
-                <p>Every small choice she makes—pausing, reflecting, setting limits<br>—becomes an act of resistance.
+                <p>Every small choice she makes—pausing, reflecting, setting limits<br>—becomes an act of
+                    resistance.
                 </p>
             </div>
             <!--part8-->
@@ -305,7 +301,7 @@
                     She grows not by escaping technology,<br>
                     but by learning how to live with it without losing herself.</p><br>
                 <div class="image-placeholder">
-                    <img src="bg8.png" alt="bloomy background 8" height="200px" width="250px">
+                    <img src="bg8.png" alt="bloomy background 8" >
                 </div>
             </div>
 
@@ -355,11 +351,15 @@
         }
 
         function updateSlide() {
-            slides.style.transform = `translateX(-${currentSlide * 900}px)`;
+            const slideWidth = document.querySelector(".slide").clientWidth;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
             document.getElementById("prevBtn").disabled = currentSlide === 0;
             document.getElementById("nextBtn").disabled = currentSlide === totalSlides - 1;
+
             createHearts();
         }
+
 
         function nextSlide() {
             if (currentSlide < totalSlides - 1) {
@@ -377,6 +377,7 @@
 
         createHearts();
         updateSlide();
+        window.addEventListener("resize", updateSlide);
 
     </script>
 </body>
