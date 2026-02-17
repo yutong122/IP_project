@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,25 +16,25 @@
     <div class="login-container signup-container">
         <span class="signup-logo">Join Digi Bloom</span>
         <p class="tagline">Start your mindful digital journey</p>
-        
+
         <form id="signupForm">
             <div class="name-group">
                 <div class="input-group">
                     <label for="firstName">First Name</label>
                     <input type="text" id="firstName" placeholder="John" required>
                 </div>
-                
+
                 <div class="input-group">
                     <label for="lastName">Last Name</label>
                     <input type="text" id="lastName" placeholder="Doe" required>
                 </div>
             </div>
-            
+
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" placeholder="name@example.com" required>
             </div>
-            
+
             <div class="input-group">
                 <label for="password">Create Password</label>
                 <input type="password" id="password" placeholder="Create a strong password" required>
@@ -47,60 +48,58 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="input-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
             </div>
-            
+
             <div class="terms">
                 <div class="terms-checkbox">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                            Policy</a></label>
                 </div>
-                
+
                 <div class="terms-checkbox">
                     <input type="checkbox" id="newsletter">
                     <label for="newsletter">Send me wellness tips and updates (optional)</label>
                 </div>
-                
+
                 <div class="terms-text">
-                    By creating an account, you're taking the first step toward mindful technology use and digital wellness.
+                    By creating an account, you're taking the first step toward mindful technology use and digital
+                    wellness.
                 </div>
             </div>
-            
+
             <button type="submit" class="signup-btn">Create Account</button>
-            
+
             <div class="login-prompt">
                 Already have an account? <a href="index.html">Sign In</a>
             </div>
-            
+
             <div class="wellness-tip">
                 <strong>Wellness Tip:</strong> Choose a password that's easy to remember but hard to guess.
             </div>
         </form>
     </div>
 
-<div class="loading-screen" id="loadingScreen">
-    <div class="logo-container">
-        <lottie-player 
-            src="loading-cat.json"
-            background="transparent"
-            speed="1"
-            style="width: 150px; height: 150px;"
-            loop
-            autoplay>
-        </lottie-player>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo-container">
+            <lottie-player 
+                src="loading-cat.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player>
+        </div>
+
+        <div class="loading-text-container">
+            <div class="loading-text">Loading</div>
+        </div>
+
+        <div class="loading-message" id="loadingMessage">
+            Preparing your mindful space...
+        </div>
     </div>
-    
-    <div class="loading-text-container">
-        <div class="loading-text">Loading</div>
-    </div>
-    
-    <div class="loading-message" id="loadingMessage">
-        Preparing your mindful space...
-    </div>
-</div>
 
 </body>
+
 </html>

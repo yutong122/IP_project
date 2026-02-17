@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 <body>
 
     <div class="login-container">
-        
+
         <div class="logo-flower">
             <span class="flower">🌸</span>
             <span class="logo">
@@ -22,53 +23,48 @@
             </span>
         </div>
         <p class="tagline">Mindful technology for a balanced life</p>
-        
+
         <form id="loginForm">
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" placeholder="name@example.com" required>
             </div>
-            
+
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Enter your password" required>
             </div>
-            
+
             <button type="submit" class="login-btn">Sign In</button>
-            
+
             <a href="#" class="forgot-link">Forgot your password?</a>
-            
+
             <div class="divider">
                 <span>Don't have an account?</span>
                 <a href="signup.html" class="signup-link">Sign Up</a>
             </div>
-            
+
             <div class="wellness-tip">
                 <strong>Wellness Tip:</strong> Take a deep breath before logging in. Set an intention.
             </div>
         </form>
     </div>
 
-<div class="loading-screen" id="loadingScreen">
-    <div class="logo-container">
-        <lottie-player 
-            src="loading-cat.json"
-            background="transparent"
-            speed="1"
-            style="width: 150px; height: 150px;"
-            loop
-            autoplay>
-        </lottie-player>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo-container">
+            <lottie-player
+                src="loading-cat.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player>
+        </div>
+
+        <div class="loading-text-container">
+            <div class="loading-text">Loading</div>
+        </div>
+
+        <div class="loading-message" id="loadingMessage">
+            Preparing your mindful space...
+        </div>
     </div>
-    
-    <div class="loading-text-container">
-        <div class="loading-text">Loading</div>
-    </div>
-    
-    <div class="loading-message" id="loadingMessage">
-        Preparing your mindful space...
-    </div>
-</div>
 
 </body>
 
