@@ -465,8 +465,10 @@ lottie-player {
 /*start quiz page*/
 .quiz-frame {
     display: flex;
-    width: 480px;
-    height: 300px;
+    width: 100%;
+    max-width: 480px;
+    min-height: 250px;
+    height: auto;
     background-color: #E7DDFC;
     border-radius: 10px;
     margin: 20px auto;
@@ -486,7 +488,8 @@ lottie-player {
 }
 
 .dog-img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 10px auto;
@@ -499,6 +502,7 @@ lottie-player {
     border-radius: 20px;
     padding: 50px;
     max-width: 900px;
+    height: 700px;
     width: 100%;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -515,12 +519,12 @@ body.quiz-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 70px;
+    padding: 40px 20px;
 }
 
 .quiz-title {
     color: var(--text-color);
-    font-family: 'Fuzzy Bubbles';
+    font-family: fuzzy-bubbles, cursive;
     font-size: 45px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -528,11 +532,12 @@ body.quiz-page {
 }
 
 .start-button {
+    display: inline-block;
     background-color: var(--dark-purple);
     color: white;
     text-decoration: none;
     border: none;
-    padding: 20px 60px;
+    padding: 12px 80px;
     font-size: 22px;
     font-weight: 600;
     border-radius: 50px;
@@ -542,9 +547,6 @@ body.quiz-page {
     margin-top: 30px;
 }
 
-.start-text{
-    color: var(--white)
-}
 
 .start-button:hover {
     background-color: var(--purple);
@@ -615,20 +617,20 @@ a {
 
 /* top logo */
 .logo-container {
-    position: fixed;
-    top: 24px;
-    left: -100px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
     z-index: 5;
 }
 
 .logo {
-    width: 90px;
+    width: 110px;
 }
 
 /* characters */
 .homepage1-characters {
     position: absolute;
-    bottom: 130px;
+    bottom: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -862,3 +864,51 @@ body.rewards-page {
     pointer-events: auto;
 }
 
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .quiz-container {
+        padding: 30px 20px;
+    }
+
+    .quiz-title {
+        font-size: 32px;
+    }
+
+    .quiz-instructions {
+        font-size: 18px;
+    }
+
+    .start-button {
+        padding: 15px 40px;
+        font-size: 18px;
+    }
+
+    .decoration {
+        font-size: 20px;
+    }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    body.quiz-page {
+        padding: 20px 15px;
+    }
+
+    .quiz-title {
+        font-size: 26px;
+    }
+
+    .quiz-instructions {
+        font-size: 16px;
+    }
+
+    .start-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+}

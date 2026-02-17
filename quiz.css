@@ -149,9 +149,23 @@ body {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+
+  /* Make it stick to the right of the container */
+  position: relative;
+  top: 20px;
+  left: 250px;
 }
 
 .stage-small-btn:hover {
   background: #ff3d8d;
   transform: scale(1.05);
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .stage-small-btn {
+    position: static;  /* removes absolute positioning */
+    display: block;
+    margin: 15px auto 0 auto;  /* center it */
+  }
 }
