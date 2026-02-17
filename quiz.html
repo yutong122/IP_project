@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Stage 1 Quiz</title>
@@ -7,231 +8,242 @@
   <link href="normalise.css" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-<div class="quiz-container">
+  <div class="quiz-container">
 
-  <div class="stage-header">
-    <a href="stages.html" class="back-arrow">←</a>
-    <h2>Stage 1</h2>
+    <div class="stage-header">
+      <a href="start_quiz.html" class="back-arrow">←</a>
+      <h2>Stage 1</h2>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <p class="progress-text" id="progressText"></p>
+
+    <!-- Question -->
+    <div class="question-card">
+      <p id="questionText"></p>
+    </div>
+
+    <!-- Answers -->
+    <div class="answers" id="answers"></div>
+
+    <!-- Buttons -->
+    <button id="checkBtn" class="main-btn">Check</button>
+    <button id="nextBtn" class="main-btn" style="display:none;">Next</button>
+
+    <!-- Feedback -->
+    <div id="feedback" class="feedback"></div>
+
   </div>
 
-  <!-- Progress Bar -->
-  <div class="progress-bar">
-    <div class="progress-fill" id="progressFill"></div>
-  </div>
-  <p class="progress-text" id="progressText"></p>
+  <script>
+    const quiz = [
+      {
+        question: "Why does Digimon grow stronger in areas where Bloomy uses screens for long periods without breaks?",
+        answers: [
+          "Screens are dangerous by default",
+          "Prolonged screen use causes digital overload",
+          "Bloomy moves too slowly",
+          "The screen brightness is too low"
+        ],
+        correct: 1
+      },
+      {
+        question: "What is the purpose of the 20-20-20 rule Bloomy learns?",
+        answers: [
+          "To improve sleep",
+          "To reduce eye strain",
+          "To increase focus time",
+          "To save battery life"
+        ],
+        correct: 1
+      },
+      {
+        question: "According to the 20-20-20 rule, how often should Bloomy take a break from screens?",
+        answers: [
+          "Every 20 minutes",
+          "Every 30 minutes",
+          "Every 45 minutes",
+          "Every hour"
+        ],
+        correct: 0
+      },
+      {
+        question: "Which action helps Bloomy weaken Digimon during screen breaks?",
+        answers: [
+          "Watching short videos",
+          "Switching to another app",
+          "Resting her eyes or stretching",
+          "Increasing screen brightness"
+        ],
+        correct: 2
+      },
+      {
+        question: "Why is Digimon more active at night?",
+        answers: [
+          "Bloomy is less alert",
+          "Screens work better at night",
+          "Screens use before sleep affects melatonin",
+          "Notifications increase after midnight"
+        ],
+        correct: 2
+      },
+      {
+        question: "What screen habit helps Bloomy improve her sleep quality?",
+        answers: [
+          "Avoiding screens at least 1 hour before bedtime",
+          "Using screens until she feels tired",
+          "Lowering brightness while scrolling",
+          "Using blue light filters at night"
+        ],
+        correct: 0
+      },
+      {
+        question: "How do constant notifications affect Bloomy in the Digital World?",
+        answers: [
+          "They improve reaction speed",
+          "They help her stay alert",
+          "They increase stress and reduce focus",
+          "They have no effect on her"
+        ],
+        correct: 2
+      },
+      {
+        question: "Which strategy best helps Bloomy manage her screen habits?",
+        answers: [
+          "Keeping all notifications on",
+          "Setting screen time limits",
+          "Using multiple devices at once",
+          "Scrolling through social media before bed"
+        ],
+        correct: 1
+      },
+      {
+        question: "Why does Bloomy need awareness before facing Digimon?",
+        answers: [
+          "Awareness increases screen brightness",
+          "Awareness makes technology disappear",
+          "Awareness reduces unnecessary screen use",
+          "Awareness makes Digimon weaker by default"
+        ],
+        correct: 2
+      },
+      {
+        question: "Which combination best weakens Digimon’s influence?",
+        answers: [
+          "Mindful use, regular breaks, and balance",
+          "Avoiding all digital devices",
+          "Longer screen time and multitasking",
+          "Using screens only for entertainment"
+        ],
+        correct: 0
+      },
+    ];
 
-  <!-- Question -->
-  <div class="question-card">
-    <p id="questionText"></p>
-  </div>
+    let currentQuestion = 0;
+    let selectedAnswer = null;
 
-  <!-- Answers -->
-  <div class="answers" id="answers"></div>
+    const questionText = document.getElementById("questionText");
+    const answersDiv = document.getElementById("answers");
+    const checkBtn = document.getElementById("checkBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const feedback = document.getElementById("feedback");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
 
-  <!-- Buttons -->
-  <button id="checkBtn" class="main-btn">Check</button>
-  <button id="nextBtn" class="main-btn" style="display:none;">Next</button>
+    function loadQuestion() {
+      selectedAnswer = null;
+      feedback.innerHTML = "";
+      nextBtn.style.display = "none";
+      checkBtn.style.display = "block";
 
-  <!-- Feedback -->
-  <div id="feedback" class="feedback"></div>
+      const q = quiz[currentQuestion];
 
-</div>
+      questionText.textContent = q.question;
+      progressText.textContent = `Question ${currentQuestion + 1} of ${quiz.length}`;
 
-<script>
-const quiz = [
-  {
-    question: "Why does Digimon grow stronger in areas where Bloomy uses screens for long periods without breaks?",
-    answers: [
-      "Screens are dangerous by default",
-      "Prolonged screen use causes digital overload",
-      "Bloomy moves too slowly",
-      "The screen brightness is too low"
-    ],
-    correct: 1
-  },
-  {
-    question: "What is the purpose of the 20-20-20 rule Bloomy learns?",
-    answers: [
-      "To improve sleep",
-      "To reduce eye strain",
-      "To increase focus time",
-      "To save battery life"
-    ],
-    correct: 1
-  },
-  {
-    question: "According to the 20-20-20 rule, how often should Bloomy take a break from screens?",
-    answers: [
-      "Every 20 minutes",
-      "Every 30 minutes",
-      "Every 45 minutes",
-      "Every hour"
-    ],
-    correct: 0
-  },
-  {
-    question: "Which action helps Bloomy weaken Digimon during screen breaks?",
-    answers: [
-      "Watching short videos",
-      "Switching to another app",
-      "Resting her eyes or stretching",
-      "Increasing screen brightness"
-    ],
-    correct: 2
-  },
-  {
-    question: "Why is Digimon more active at night?",
-    answers: [
-      "Bloomy is less alert",
-      "Screens work better at night",
-      "Screens use before sleep affects melatonin",
-      "Notifications increase after midnight"
-    ],
-    correct: 2
-  },
-  {
-    question: "What screen habit helps Bloomy improve her sleep quality?",
-    answers: [
-      "Avoiding screens at least 1 hour before bedtime",
-      "Using screens until she feels tired",
-      "Lowering brightness while scrolling",
-      "Using blue light filters at night"
-    ],
-    correct: 0
-  },
-  {
-    question: "How do constant notifications affect Bloomy in the Digital World?",
-    answers: [
-      "They improve reaction speed",
-      "They help her stay alert",
-      "They increase stress and reduce focus",
-      "They have no effect on her"
-    ],
-    correct: 2
-  },
-  {
-    question: "Which strategy best helps Bloomy manage her screen habits?",
-    answers: [
-      "Keeping all notifications on",
-      "Setting screen time limits",
-      "Using multiple devices at once",
-      "Scrolling through social media before bed"
-    ],
-    correct: 1
-  },
-  {
-    question: "Why does Bloomy need awareness before facing Digimon?",
-    answers: [
-      "Awareness increases screen brightness",
-      "Awareness makes technology disappear",
-      "Awareness reduces unnecessary screen use",
-      "Awareness makes Digimon weaker by default"
-    ],
-    correct: 2
-  },
-  {
-    question: "Which combination best weakens Digimon’s influence?",
-    answers: [
-      "Mindful use, regular breaks, and balance",
-      "Avoiding all digital devices",
-      "Longer screen time and multitasking",
-      "Using screens only for entertainment"
-    ],
-    correct: 0
-  },
-];
+      progressFill.style.width = ((currentQuestion + 1) / quiz.length) * 100 + "%";
 
-let currentQuestion = 0;
-let selectedAnswer = null;
+      answersDiv.innerHTML = "";
 
-const questionText = document.getElementById("questionText");
-const answersDiv = document.getElementById("answers");
-const checkBtn = document.getElementById("checkBtn");
-const nextBtn = document.getElementById("nextBtn");
-const feedback = document.getElementById("feedback");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
+      q.answers.forEach((answer, index) => {
+        const btn = document.createElement("div");
+        btn.classList.add("answer");
+        btn.textContent = answer;
 
-function loadQuestion() {
-  selectedAnswer = null;
-  feedback.innerHTML = "";
-  nextBtn.style.display = "none";
-  checkBtn.style.display = "block";
+        btn.onclick = () => {
+          document.querySelectorAll(".answer").forEach(a => a.classList.remove("selected"));
+          btn.classList.add("selected");
+          selectedAnswer = index;
+        };
 
-  const q = quiz[currentQuestion];
+        answersDiv.appendChild(btn);
+      });
+    }
 
-  questionText.textContent = q.question;
-  progressText.textContent = `Question ${currentQuestion + 1} of ${quiz.length}`;
+    checkBtn.onclick = () => {
+      if (selectedAnswer === null) {
+        alert("Please select an answer first!");
+        return;
+      }
 
-  progressFill.style.width = ((currentQuestion + 1) / quiz.length) * 100 + "%";
+      const correctIndex = quiz[currentQuestion].correct;
+      const answerButtons = document.querySelectorAll(".answer");
 
-  answersDiv.innerHTML = "";
+      if (selectedAnswer === correctIndex) {
 
-  q.answers.forEach((answer, index) => {
-    const btn = document.createElement("div");
-    btn.classList.add("answer");
-    btn.textContent = answer;
+        // CORRECT ANSWER
+        answerButtons[selectedAnswer].classList.add("correct");
+        feedback.innerHTML = "<h3 class='correct-text'>YAY 🎉 You got it right!</h3>";
 
-    btn.onclick = () => {
-      document.querySelectorAll(".answer").forEach(a => a.classList.remove("selected"));
-      btn.classList.add("selected");
-      selectedAnswer = index;
+        checkBtn.style.display = "none";
+        nextBtn.style.display = "block";
+
+      } else {
+
+        // WRONG ANSWER
+        answerButtons[selectedAnswer].classList.add("wrong");
+        feedback.innerHTML = "<h3 class='wrong-text'>Nooo 😢 Try again!</h3>";
+        nextBtn.style.display = "none";
+
+        setTimeout(() => {
+          answerButtons[selectedAnswer].classList.remove("wrong");
+        }, 1000);
+      }
+    }
+
+    nextBtn.onclick = () => {
+      currentQuestion++;
+
+      if (currentQuestion < quiz.length) {
+        loadQuestion();
+      } else {
+        questionText.innerHTML = `
+        🎉 Quiz Completed!
+        <br><br>
+        <button id="stageBtn" class="stage-small-btn">
+        Go To Stages
+        </button>`;
+        answersDiv.innerHTML = "";
+        checkBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        feedback.innerHTML = "";
+        progressFill.style.width = "100%";
+        const stageBtn = document.getElementById("stageBtn");
+        stageBtn.onclick = () => {
+          window.location.href = "stages.html";
+        };
+      }
     };
 
-    answersDiv.appendChild(btn);
-  });
-}
-
-checkBtn.onclick = () => {
-  if (selectedAnswer === null) {
-    alert("Please select an answer first!");
-    return;
-  }
-
-  const correctIndex = quiz[currentQuestion].correct;
-  const answerButtons = document.querySelectorAll(".answer");
-
-  if (selectedAnswer === correctIndex) {
-
-    // CORRECT ANSWER
-    answerButtons[selectedAnswer].classList.add("correct");
-    feedback.innerHTML = "<h3 class='correct-text'>YAY 🎉 You got it right!</h3>";
-
-    checkBtn.style.display = "none";
-    nextBtn.style.display = "block"; 
-
-  } else {
-
-    // WRONG ANSWER
-    answerButtons[selectedAnswer].classList.add("wrong");
-    feedback.innerHTML = "<h3 class='wrong-text'>Nooo 😢 Try again!</h3>";
-    nextBtn.style.display = "none";
-
-    setTimeout(() => {
-      answerButtons[selectedAnswer].classList.remove("wrong");
-    }, 1000);
-  }
-}
-
-nextBtn.onclick = () => {
-  currentQuestion++;
-
-  if (currentQuestion < quiz.length) {
     loadQuestion();
-  } else {
-    questionText.textContent = "🎉 Quiz Completed!";
-    answersDiv.innerHTML = "";
-    checkBtn.style.display = "none";
-    nextBtn.style.display = "none";
-    feedback.innerHTML = "";
-    progressFill.style.width = "100%";
-  }
-};
-
-loadQuestion();
-</script>
+  </script>
 
 </body>
+
 </html>

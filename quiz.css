@@ -139,3 +139,19 @@ body {
 .wrong-text {
   color: #dc2626;
 }
+
+.stage-small-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  background: #ff5fa2;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.stage-small-btn:hover {
+  background: #ff3d8d;
+  transform: scale(1.05);
+}
