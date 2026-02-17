@@ -101,7 +101,7 @@
     background-color: #cf478b;
 }
 .view-story-btn.digimon-theme{
-    background-color: var(--purple);
+    background-color: var(--light-purple);
 }
 .view-story-btn.bloomy-theme {
     background-color: var(--dark-pink);
